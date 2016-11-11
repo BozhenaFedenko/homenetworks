@@ -1,0 +1,79 @@
+﻿<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<title>Мой сайт</title>
+		<link href="style.css" rel="stylesheet" type="text/css"/>
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+	</head>
+	<body>
+	<header>
+	<!--Menu-->
+	<menu type="toolbar">
+	<ul class="main-menu">
+	<li class="menu-item1"><a href="index.html" title="ГЛАВНАЯ"><img src="img/button-472.png"></a></li>
+	<li class="menu-item1"><a class="active" href="reg.html" title="РЕГИСТРАЦИЯ"><img src="img/button-4358.png"></a></li>
+	<li class="menu-item4"><a href="contact.html" title="КОНТАКТЫ"><img src="img/button-9572.png"></a></li>
+	</ul>
+	</menu>
+	<div class="header-bg">
+    <img src="img/4.jpg" alt="NY"
+    width=100%>
+    </div>
+	</header>
+	<div main>
+	<h1>Зареєструватись</h1>
+	<form id="contForm1" action="" method="post">
+			<div>
+			<label for="uname" required="required">Логін: </label>&nbsp;&nbsp;&nbsp;<input type="text" name="uname" value="" placeholder="Введіть імя">
+			</div>
+			
+			
+			<div>
+			<label for="password" required="required">Пароль: </label><input type="password" name="upassword" value="" placeholder="Введіть пароль">
+			</div>
+			<div>
+			<label for="uemail" required="required">Е-мейл: </label><input type="email" name="uemail" value="" placeholder="Зареєструватись">
+			</div>
+			<div>
+			<label for="uregion">Регіон: </label>
+			<select id="uregion" name="uregion">
+				<option value="US">США</option>
+				<option value="EU">Європа</option>
+				<option value="UA" selected="selected">Україна</option>
+				<option value="RU">Russia</option>
+			</select>
+			</div>
+			<div>
+			
+			</div>
+			<div>
+				<input type="submit" value="Зареєструватись">
+			</div>
+		</form>
+		<div class="result">
+		</div>
+		<script>
+
+			jQuery("#contForm1").submit(function(){
+				jQuery.post(
+					'send.php',
+					jQuery( "#contForm1" ).serialize(),
+					function( data ) {
+				  jQuery( ".result" ).html( data );
+				});
+				
+				return false;
+			});
+		</script>
+	
+	</div>
+	<div class="wrapper">
+
+     <div class="content"></div>
+
+     <div class="footer"><h4>&copy Created by Bozena Fedenko</h4></div>
+
+	</div>
+	</body>
+</html>
